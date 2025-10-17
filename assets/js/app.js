@@ -47,8 +47,15 @@ new Typed('#typed', {
 });
 
 window.addEventListener('load', () => {
+  gsap.utils.toArray('.panel-section').forEach((sec, idx) => {
+    gsap.from(sec, {
+      y: 30, opacity: 0, duration: 0.9, delay: idx*0.12,
+      scrollTrigger: { trigger: sec, start: 'top 85%' }
+    });
+  });
   ScrollTrigger.refresh();
 });
+
 
 
 // ---------- Terminal simulation ----------
