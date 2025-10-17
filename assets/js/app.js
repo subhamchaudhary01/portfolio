@@ -46,6 +46,11 @@ new Typed('#typed', {
   loop: true
 });
 
+window.addEventListener('load', () => {
+  ScrollTrigger.refresh();
+});
+
+
 // ---------- Terminal simulation ----------
 const terminal = document.getElementById('terminal');
 const tlines = [
@@ -80,10 +85,22 @@ gsap.utils.toArray('.panel-section').forEach((sec, idx) => {
   });
 });
 
-// project cards entrance
-gsap.utils.toArray('.project-card').forEach((card,i)=>{
-  gsap.from(card, { y: 20, opacity: 0, duration: 0.9, delay: i*0.08, scrollTrigger: { trigger: card, start: 'top 90%' }});
-});
+// // project cards entrance
+// gsap.utils.toArray('.project-card').forEach((card,i)=>{
+//   gsap.from(card, { y: 20, opacity: 0, duration: 0.9, delay: i*0.08, scrollTrigger: { trigger: card, start: 'top 90%' }});
+// });
+
+// Animate project cards
+  gsap.utils.toArray('.project-card').forEach((card,i)=>{
+    gsap.from(card, {
+      y: 20,
+      opacity: 0,
+      duration: 0.9,
+      delay: i*0.08,
+      scrollTrigger: { trigger: card, start: 'top 90%' }
+    });
+  });
+
 
 // small 3D tilt on project hover
 // --- project card hover + click ---
@@ -116,11 +133,19 @@ document.querySelectorAll('.project-overlay a').forEach(btn => {
 });
 
 
-// ---------- Section nav smooth scroll + active highlight ----------
+// // ---------- Section nav smooth scroll + active highlight ----------
+// document.querySelectorAll('.nav-btn').forEach(btn=>{
+//   btn.addEventListener('click', ()=> {
+//     const target = document.querySelector(btn.dataset.target);
+//     if(target) target.scrollIntoView({behavior:'smooth', block:'center'});
+//   });
+// });
+
+// ---------- Section nav smooth scroll ----------
 document.querySelectorAll('.nav-btn').forEach(btn=>{
   btn.addEventListener('click', ()=> {
     const target = document.querySelector(btn.dataset.target);
-    if(target) target.scrollIntoView({behavior:'smooth', block:'center'});
+    if(target) target.scrollIntoView({ behavior:'smooth', block:'start' }); // changed 'center' -> 'start'
   });
 });
 
@@ -176,6 +201,8 @@ gsap.utils.toArray('.process-step, .story-card').forEach((el, i) => {
     delay: i * 0.1
   });
 });
+
+
 
 
 // trigger once when hero enters view
