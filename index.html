@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Subham Chaudhary — Portfolio</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Tailwind (utilities used lightly) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- Boxicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- animated background canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- top-right section jump bar -->
+  <nav id="section-nav" class="section-nav" aria-label="section navigation">
+    <button data-target="#top" class="nav-btn" title="Top"><i class='bx bx-home'></i></button>
+    <button data-target="#projects" class="nav-btn" title="Projects"><i class='bx bx-briefcase'></i></button>
+    <button data-target="#experience" class="nav-btn" title="Experience"><i class='bx bx-building'></i></button>
+    <button data-target="#process" class="nav-btn" title="How I Build"><i class='bx bx-cog'></i></button>
+    <button data-target="#stories" class="nav-btn" title="Highlight Stories"><i class='bx bx-bulb'></i></button>
+    <button data-target="#education" class="nav-btn" title="Education"><i class='bx bx-book'></i></button>
+    <button data-target="#achievements" class="nav-btn" title="Achievements"><i class='bx bx-award'></i></button>
+    <button data-target="#contact" class="nav-btn" title="Contact"><i class='bx bx-envelope'></i></button>
+  </nav>
+
+  <main class="wrap">
+    <!-- HERO: split-screen -->
+    <section id="top" class="hero split">
+      <!-- left column -->
+      <div class="hero-left">
+        <h1 class="name-line">SUBHAM <span class="accent">CHAUDHARY</span></h1>
+        <div class="role">Full Stack Developer — .NET • MERN • DevOps</div>
+        <div class="typed-wrap">
+          <span id="typed"></span>
+        </div>
+        <p class="summary">I build production-grade web applications and scalable systems — from realtime dashboards to robust backend APIs. I focus on product-driven engineering and strong DevOps practices.</p>
+
+        <div class="hero-buttons">
+          <a class="btn neon" href="mailto:11subhamchaudhary@gmail.com"><i class='bx bx-envelope'></i> Email</a>
+          <a class="btn neon" href="https://www.linkedin.com/in/subham-chaudhary-bba005325" target="_blank"><i class='bx bxl-linkedin'></i> LinkedIn</a>
+          <a class="btn neon" href="https://github.com/subhamchaudhary01" target="_blank"><i class='bx bxl-github'></i> GitHub</a>
+          <a class="btn ghost" href="assets/resume/Subham_Chaudhary_Resume.pdf" download><i class='bx bx-download'></i> Download Resume</a>
+        </div>
+
+        <div class="quick-stats">
+  <button class="stat-btn">
+    <i class='bx bx-time-five'></i>
+    <span id="years">0</span>+ Years Experience
+  </button>
+  <button class="stat-btn">
+    <i class='bx bx-code-block'></i>
+    <span id="projects">0</span>+ Projects Delivered
+  </button>
+</div>
+
+
+      </div>
+
+      <!-- right column -->
+      <div class="hero-right">
+        <!-- put your photo at assets/images/photo.jpg -->
+        <div class="photo-frame">
+          <img src="assets/images/photo.png" alt="Subham Chaudhary — photo" id="hero-photo">
+          <div class="code-lines" aria-hidden="true">
+            <div class="line">const build = () =&gt; {'{'}</div>
+            <div class="line">  return &lt;scalableSystems /&gt;</div>
+            <div class="line">{'}'}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="panel-section">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline education-tl">
+        <div class="tl-item">
+          <div class="tl-left"><strong>Lambton College</strong><div class="muted">Post-Graduate — Full Stack Software Development</div></div>
+          <div class="tl-right"><small>Sept 2024 – Present • Canada</small><p>GPA: 3.8 / 4.0 — Coursework: Front-End & Back-End Development, Cloud, DevOps, Project Mgmt, Database Programming, DSA, Advance Java, Networking</p></div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-left"><strong>London Metropolitan University</strong><div class="muted">BSc (Hons) Information Technology — First Class Honours</div></div>
+          <div class="tl-right"><small>Sept 2019 – Apr 2022 • Nepal</small><p>Software Engineering, AI, DB Systems, Networks, Application Development, OS, Hardware Architecture</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="panel-section">
+      <h2 class="section-title">Experience</h2>
+      <div class="experiences">
+        <article class="exp-card">
+          <header>
+            <h4>Synergy Info Systems</h4>
+            <span class="muted">Software Engineer — Oct 2023 – Apr 2024 • Kathmandu, Nepal</span>
+          </header>
+          <ul>
+            <li>Enhanced front-end modules using React, jQuery, and AJAX — improved usability & reduced navigation time by 30%.</li>
+            <li>Automated Accounts Payable and Purchase Authorization workflows in ASP.NET Core — cut processing time by 40%.</li>
+            <li>Built reporting modules with Crystal Reports and MSSQL — reduced data retrieval time by 50%.</li>
+            <li>Integrated secure payment processing features — improved transaction transparency & efficiency by 35%.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <header>
+            <h4>iTsoch Pvt. Ltd.</h4>
+            <span class="muted">Web Developer — Nov 2022 – Aug 2023 • Itahari, Nepal</span>
+          </header>
+          <ul>
+            <li>Developed responsive dashboards with React & Tailwind — increased real-time vehicle monitoring efficiency by 25%.</li>
+            <li>Improved UI components using jQuery and AJAX — streamlined interactions by 20%.</li>
+            <li>Implemented Docker-based development environment for consistent deployments and faster testing.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <header>
+            <h4>Datacraft Technology Pvt. Ltd.</h4>
+            <span class="muted">Junior Software Developer — Aug 2021 – Feb 2022 • Kathmandu, Nepal</span>
+          </header>
+          <ul>
+            <li>Developed Ropey DVD management system — increased record accuracy by 40%.</li>
+            <li>Built Sales Mart POS (WPF/.NET MAUI) — automated sales/refunds & reduced manual errors by 35%.</li>
+            <li>Contributed to College Management System (Blazor, MSSQL) — streamlined academic data handling.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================== HOW I BUILD SECTION ================== -->
+<section id="process" class="panel-section">
+  <div class="container text-center">
+    <h2 class="section-title">How I Build</h2>
+    <p class="section-intro">
+      Every project starts with one question — <strong>“What problem are we solving?”</strong><br>
+      From there, I map the flow, build the core, automate the repeatable, and scale with clarity.  
+      My goal is to deliver software that’s fast, fault-tolerant, and enjoyable to maintain.
+    </p>
+    <div class="process-cards">
+      <div class="process-step">
+        <i class='bx bx-brain'></i>
+        <h5>Think in Systems</h5>
+        <p>I design modular architectures that evolve — not explode — when features grow.</p>
+      </div>
+      <div class="process-step">
+        <i class='bx bx-code-curly'></i>
+        <h5>Code with Empathy</h5>
+        <p>I write code that the next developer (or future me) can understand instantly.</p>
+      </div>
+      <div class="process-step">
+        <i class='bx bx-cog'></i>
+        <h5>Automate Relentlessly</h5>
+        <p>From CI/CD pipelines to linting scripts — every manual step is a bug waiting to happen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== HIGHLIGHT STORIES ================== -->
+<section id="stories" class="panel-section alt-bg">
+  <div class="container text-center">
+    <h2 class="section-title">Highlight Stories</h2>
+    <p class="section-intro">
+      A few moments I’m proud of — where code met impact.
+    </p>
+    <div class="story-cards">
+      <div class="story-card">
+        <i class='bx bx-rocket'></i>
+        <h5>Synergy Info Systems</h5>
+        <p>Built automation in ASP.NET Core that cut accounting time by <strong>40%</strong> and made finance teams smile.</p>
+      </div>
+      <div class="story-card">
+        <i class='bx bx-line-chart'></i>
+        <h5>iTsoch Pvt. Ltd.</h5>
+        <p>Refactored React dashboards — dropped load time by <strong>30%</strong>, raised analytics clarity instantly.</p>
+      </div>
+      <div class="story-card">
+        <i class='bx bx-shield-quarter'></i>
+        <h5>Datacraft Technology</h5>
+        <p>Built secure role-based access and predictive modules for retail, increasing data accuracy by <strong>40%</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="panel-section">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <!-- Messiah IMS -->
+        <div class="project-card" data-repo="https://github.com/subhamchaudhary01/messiah-ims">
+  <img src="assets/images/messiah-ims.jpg" alt="Messiah IMS screenshot">
+  <div class="project-overlay">
+  <h5>Messiah IMS</h5>
+  <a href="https://github.com/subhamchaudhary01/messiah-ims" target="_blank" class="btn-sm">
+    <i class='bx bxl-github'></i> View Repo
+  </a>
+</div>
+
+</div>
+
+<div class="project-card" data-repo="https://github.com/subhamchaudhary01/digitallibrary">
+  <img src="assets/images/digital-library.jpg" alt="Digital Library screenshot">
+  <div class="project-overlay">
+  <h5>Messiah IMS</h5>
+  <a href="https://github.com/subhamchaudhary01/digitallibrary" target="_blank" class="btn-sm">
+    <i class='bx bxl-github'></i> View Repo
+  </a>
+</div>
+
+</div>
+
+<div class="project-card" data-repo="https://github.com/subhamchaudhary01/cryptotracker">
+  <img src="assets/images/crypto-tracker.jpg" alt="Crypto Tracker screenshot">
+  <div class="project-overlay">
+  <h5>Messiah IMS</h5>
+  <a href="https://github.com/subhamchaudhary01/cryptotracker" target="_blank" class="btn-sm">
+    <i class='bx bxl-github'></i> View Repo
+  </a>
+</div>
+
+</div>
+
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="panel-section">
+      <h2 class="section-title">Achievements & Leadership</h2>
+      <div class="badges">
+        <div class="badge">Volunteer Mentor — FYP Showcase 2023</div>
+        <div class="badge">Top 5 Final Year Project (2022) — London Metropolitan University</div>
+        <div class="badge">Event Organizer — Kangaroo Education Foundation (1,000+ participants)</div>
+      </div>
+    </section>
+
+    <!-- CONTACT / COMMAND FOOTER -->
+    <section id="contact" class="panel-section">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-panel">
+        <p><strong>Email:</strong> <a href="mailto:11subhamchaudhary@gmail.com">11subhamchaudhary@gmail.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/subhamchaudhary01" target="_blank">github.com/subhamchaudhary01</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/subham-chaudhary-bba005325" target="_blank">linkedin.com/in/subham-chaudhary-bba005325</a></p>
+      </div>
+
+      <div class="cmdline">
+        <div id="cmdtext">subham@portfolio: Thanks for visiting — let's build something great together.</div>
+        <div id="cmdcursor" class="cursor">█</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- core JS -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
